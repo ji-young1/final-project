@@ -1,4 +1,4 @@
-# sentiment movie corpus
+# sentiment movie review corpus
 
 This is a movie review dataset in the Korean language.
 Reviews were scraped from [Naver Movies](http://movie.naver.com/movie/point/af/list.nhn).
