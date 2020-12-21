@@ -1,9 +1,7 @@
-# Naver sentiment movie corpus v1.0
+# sentiment movie corpus
 
 This is a movie review dataset in the Korean language.
 Reviews were scraped from [Naver Movies](http://movie.naver.com/movie/point/af/list.nhn).
-
-The dataset construction is based on the method noted in [Large movie review dataset](http://ai.stanford.edu/~amaas/data/sentiment/) from Maas et al., 2011.
 
 
 ## Data description
@@ -40,11 +38,3 @@ The dataset construction is based on the method noted in [Large movie review dat
     9443947 별 반개도 아깝다 욕나온다 이응경 길용우 연기생활이몇년인지..정말 발로해도 그것보단 낫겟다 납치.감금만반복반복..이드라마는 가족도없다 연기못하는사람만모엿네       0
     7156791 액션이 없는데도 재미 있는 몇안되는 영화 1
 
-## License
-
-<p xmlns:dct="http://purl.org/dc/terms/">
-  <a rel="license"
-     href="http://creativecommons.org/publicdomain/zero/1.0/">
-    <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
-  </a>
-</p>
