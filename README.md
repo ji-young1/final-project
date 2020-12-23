@@ -1,4 +1,4 @@
-# sentiment movie review corpus
+# 웹 데이터 수집을 통한 감정 분석 챗봇 개발
 
 This is a movie review dataset in the Korean language.
 Reviews were scraped from [Naver Movies](http://movie.naver.com/movie/point/af/list.nhn).
