@@ -1,40 +1,30 @@
 # 웹 데이터 수집을 통한 감정 분석 챗봇 개발
 
-This is a movie review dataset in the Korean language.
-Reviews were scraped from [Naver Movies](http://movie.naver.com/movie/point/af/list.nhn).
+본 프로젝트는 웹 데이터 수집을 통한 감정 분석 챗봇 개발로, 한국어 텍스트로 된 영화 리뷰 데이터셋을 이용하여 긍정과 부정을 판단하는 감정 분석을 하는 모델을 만들어 챗봇 형태로 구현한다. 영화 리뷰 데이터는 네이버 영화 리뷰 사이트에서 크롤링하여 수집하였다. [Naver Movies](http://movie.naver.com/movie/point/af/list.nhn).
 
 
-## Data description
+## 각 데이터의 의미
 
-- Each file is consisted of three columns: `id`, `document`, `label`
-    - `id`: The review id, provieded by Naver
-    - `document`: The actual review
-    - `label`: The sentiment class of the review. (0: negative, 1: positive)
-    - Columns are delimited with tabs (i.e., `.tsv` format; but the file extension is `.txt` for easy access for novices)
-- 200K reviews in total
-    - `ratings.txt`: All 200K reviews
-    - `ratings_test.txt`: 50K reviews held out for testing
-    - `ratings_train.txt`: 150K reviews for training
+- 각 파일에는 다음 세 항목이 포함되어 있다.
+    - `id`: 네이버에서 제공하는 리뷰 데이터 id
+    - `document`: 실제 작성된 리뷰 내용
+    - `label`: 리뷰의 sentiment class (0: 부정, 1: 긍정)
+- 전체는 200K 리뷰들이 있다.
+    - `ratings.txt`: 200K 리뷰 내용 전체
+    - `ratings_test.txt`: testing을 위한 50K 리뷰
+    - `ratings_train.txt`: training을 위한 150K 리뷰
 
-## Characteristics
 
-- All reviews are shorter than 140 characters
-- Each sentiment class is sampled equally (i.e., random guess yields 50% accuracy)
-    - 100K negative reviews (originally reviews of ratings 1-4)
-    - 100K positive reviews (originally reviews of ratings 9-10)
-    - Neutral reviews (originally reviews of ratings 5-8) are excluded
+## 특성
 
-## Quick peek
+- 모든 리뷰 내용은 140 chracters보다 작다.
+- 각 sentiment class는 평등하게 샘프링되었다.
+    - 100K 부정 내용의 리뷰들
+    - 100K 긍정 내용의 리뷰들
+    - 중립적인 리뷰 내용들은 불포함
+    
+    
+## 챗봇
 
-    $ head ratings_train.txt
-    id      document        label
-    9976970 아 더빙.. 진짜 짜증나네요 목소리        0
-    3819312 흠...포스터보고 초딩영화줄....오버연기조차 가볍지 않구나        1
-    10265843        너무재밓었다그래서보는것을추천한다      0
-    9045019 교도소 이야기구먼 ..솔직히 재미는 없다..평점 조정       0
-    6483659 사이몬페그의 익살스런 연기가 돋보였던 영화!스파이더맨에서 늙어보이기만 했던 커스틴 던스트가 너무나도 이뻐보였다  1
-    5403919 막 걸음마 뗀 3세부터 초등학교 1학년생인 8살용영화.ㅋㅋㅋ...별반개도 아까움.     0
-    7797314 원작의 긴장감을 제대로 살려내지못했다.  0
-    9443947 별 반개도 아깝다 욕나온다 이응경 길용우 연기생활이몇년인지..정말 발로해도 그것보단 낫겟다 납치.감금만반복반복..이드라마는 가족도없다 연기못하는사람만모엿네       0
-    7156791 액션이 없는데도 재미 있는 몇안되는 영화 1
-
+- 음성 혹은 텍스트로 긍정 혹은 부정의 판단을 원하는 영화 제목을 입력할 수 있다.
+- 입력된 영화 제목과 함께 포스터를 검색하여 출력하고, 감정 분석을 할 리뷰데이터의 출처인 포털 사이트를 선택할 수 있다.
